@@ -190,6 +190,50 @@
           <img src="assets/icons/right_arror.svg" alt="" class="h-[1.14rem] w-[1.14rem] sm:h-[2.5rem] sm:w-[2.5rem]"/>
         </a>
       </section>
+
+      <!-- Pain Point -->
+      <section class="py-7.5 md:pt-25 md:pb-27 px-5 sm:px-9.5 lg:px-18.25 xl:px-32.5"
+        x-data="{
+          items: [
+            {
+              id: 'pain_1',
+              img_md: 'assets/images/point_1_md.png',
+              img_sm: 'assets/images/point_1_sm.png',
+              text: '曲面・アール面の施工が難しい',
+            },
+            {
+              id: 'pain_2',
+              img_md: 'assets/images/point_2_md.png',
+              img_sm: 'assets/images/point_2_sm.png',
+              text: '単色メラミン材の質感が安っぽく、見た目が単調',
+            },
+            {
+              id: 'pain_3',
+              img_md: 'assets/images/point_3_md.png',
+              img_sm: 'assets/images/point_3_sm.png',
+              text: '木口の黒い縁が目立ち、空間にマッチしない',
+            }
+          ]
+        }">
+        <div class="relative">
+          <div>
+            <img class="md:hidden w-auto h-[5px]" src="assets/images/point_line_sm.png"/>
+            <img class="hidden md:block w-auto h-[5px]" src="assets/images/point_line_md.png"/>
+          </div>
+          <p class="tracking-[.1em] mt-5 md:mt-8.5 lg:mt-11.25 1.5xl:mt-15 font-bold text-xl md:text-2xl lg:text-3xl 1.5xl:text-[2.5rem] md:whitespace-pre-line">板材（メラミン化粧板）に関して
+          感じている課題は何ですか？</p>
+          <div class="flex flex-col md:flex-row gap-y-5 gap-x-7.5 mt-5 md:mt-12 lg:mt-16 1.5xl:mt-25">
+            <template x-for="item in items" :key="item.id">
+              <div class="w-full md:w-42 lg:w-56.25 1.5xl:w-75">
+                <img :src="item.img_md" class="w-full hidden md:block"/>
+                <img :src="item.img_sm" class="w-full md:hidden"/>
+                <p class="mt-2.5 md:mt-7.5 lg:pr-4 text-xs md:text-sm lg:text-lg 1.5xl:text-2xl" x-text="item.text"></p>
+              </div>
+            </template>
+          </div>
+          <div class="hidden md:block absolute right-0 top-0 rotate-90 origin-top-left translate-x-full uppercase text-[3.18rem] lg:text-[4.25rem] 1.5xl:text-[5.625rem] font-bold text-light-gray">pain point</div>
+        </div>
+      </section>
       <!-- Speciality_1 -->
       <section 
         class="w-full bg-middle-gray py-[1.875rem] md:py-[6.25rem] md:flex md:justify-between "
