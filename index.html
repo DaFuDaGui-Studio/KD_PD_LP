@@ -29,6 +29,7 @@
 
     <style type="text/tailwindcss">
       @theme {
+        --breakpoint-1.5xl: 90rem; /* 1440px */
         --text-xxs: 0.625rem; /* text 10px */
         --font-m-plus: "M PLUS 1", sans-serif;
         --font-noto-sans-jp: "Noto Sans JP", sans-serif;
@@ -45,7 +46,7 @@
       @layer base {
         html {
           font-size: 16px;
-          @apply font-noto-sans-jp leading-[0.9375rem] tracking-[0.05rem];
+          @apply font-noto-sans-jp leading-[1.5] tracking-[0.05rem];
         }
       }
 
@@ -137,17 +138,6 @@
         .swiper-button-prev::after {
           content: none !important; /* 移除內建箭頭 */
         }
-
-        .form_select {
-          -webkit-appearance: none;
-          -moz-appearance: none;
-          appearance: none;
-          background-image: url('assets/icons/select-arrow.svg'); /* 你的箭頭圖示路徑 */
-          background-repeat: no-repeat;
-          background-position: right 1rem center;
-          background-size: 1.5em 1em;
-          @apply pr-5;
-        }
       }
     </style>
   </head>
@@ -199,6 +189,50 @@
           <div class="mr-[0.57rem]" >お問い合わせ</div>
           <img src="assets/icons/right_arror.svg" alt="" class="h-[1.14rem] w-[1.14rem] sm:h-[2.5rem] sm:w-[2.5rem]"/>
         </a>
+      </section>
+
+      <!-- Pain Point -->
+      <section class="py-7.5 md:pt-25 md:pb-27 px-5 sm:px-9.5 lg:px-18.25 xl:px-32.5"
+        x-data="{
+          items: [
+            {
+              id: 'pain_1',
+              img_md: 'assets/images/point_1_md.png',
+              img_sm: 'assets/images/point_1_sm.png',
+              text: '曲面・アール面の施工が難しい',
+            },
+            {
+              id: 'pain_2',
+              img_md: 'assets/images/point_2_md.png',
+              img_sm: 'assets/images/point_2_sm.png',
+              text: '単色メラミン材の質感が安っぽく、見た目が単調',
+            },
+            {
+              id: 'pain_3',
+              img_md: 'assets/images/point_3_md.png',
+              img_sm: 'assets/images/point_3_sm.png',
+              text: '木口の黒い縁が目立ち、空間にマッチしない',
+            }
+          ]
+        }">
+        <div class="relative">
+          <div>
+            <img class="md:hidden w-auto h-[5px]" src="assets/images/point_line_sm.png"/>
+            <img class="hidden md:block w-auto h-[5px]" src="assets/images/point_line_md.png"/>
+          </div>
+          <p class="tracking-[.1em] mt-5 md:mt-8.5 lg:mt-11.25 1.5xl:mt-15 font-bold text-xl md:text-2xl lg:text-3xl 1.5xl:text-[2.5rem] md:whitespace-pre-line">板材（メラミン化粧板）に関して
+          感じている課題は何ですか？</p>
+          <div class="flex flex-col md:flex-row gap-y-5 gap-x-7.5 mt-5 md:mt-12 lg:mt-16 1.5xl:mt-25">
+            <template x-for="item in items" :key="item.id">
+              <div class="w-full md:w-42 lg:w-56.25 1.5xl:w-75">
+                <img :src="item.img_md" class="w-full hidden md:block"/>
+                <img :src="item.img_sm" class="w-full md:hidden"/>
+                <p class="mt-2.5 md:mt-7.5 lg:pr-4 text-xs md:text-sm lg:text-lg 1.5xl:text-2xl" x-text="item.text"></p>
+              </div>
+            </template>
+          </div>
+          <div class="hidden md:block absolute right-0 top-0 rotate-90 origin-top-left translate-x-full uppercase text-[3.18rem] lg:text-[4.25rem] 1.5xl:text-[5.625rem] font-bold text-light-gray">pain point</div>
+        </div>
       </section>
       <!-- Speciality_1 -->
       <section 
@@ -628,12 +662,264 @@
 
       </section>
 
+      <!-- Spec -->
+      <section class="max-w-360 mx-auto px-5 md:px-9.5 lg:px-30 py-7.5 md:py-25">
+        <div class="relative">
+          <img src="assets/images/spec_sm.png" class="block sm:hidden w-full h-auto" />
+          <img src="assets/images/spec_md.png" class="hidden sm:block w-full h-auto" />
+          <div class="absolute top-0 left-0 w-full h-full">
+            <div class="flex flex-col md:flex-row md:items-center justify-end md:justify-between gap-y-[6.25vw] w-full h-full p-[6.25vw] md:p-18.75 1.5xl:p-25 md:pr-12.5">
+              <p class="whitespace-pre-line text-xxs md:text-base lg:text-lg xl:text-xl text-white">標準サイズのラミネート板は
+                4′×8′（1220×2440×1mm）です。カスタム
+                サイズとして、4′×10′（1220×3050×1mm）
+                および4′×12′（1220×3660×1mm）もご用意
+                しております。</p>
+              <div class="w-full md:w-fit">
+                <a href="https://keding-global.com/ja/ji/eko-percent-e2-percent-81-percent-ba-ramineto/" target="_blank" class="flex items-center gap-x-5">
+                  <p class="font-black md:text-xl xl:text-3xl text-white">仕様一覧</p>
+                  <img src="assets/icons/right-arrow-with-yellow-bg.svg" class="size-7.5 xl:size-10" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- Case -->
+      <section class="max-w-360 mx-auto px-5 sm:px-9.5 lg:px-18.25 xl:px-32.5 py-7.5 sm:py-25">
+        <!-- Mobile carousel-->
+        <div class="sm:hidden" x-data>
+          <p class="mx-auto text-kd-20 font-bold">施工事例</p>
+          <div class="swiper swiper-container case-swiper mt-5">
+            <div class="swiper-wrapper">
+              <template x-for="(caseItem, idx) in $store.sheet.constructionCase" :key="`case-xs-${caseItem.id}`">
+                <div class="swiper-slide h-135">
+                  <div class="w-70 h-28 mx-auto">
+                    <div class="flex items-center">
+                      <p class="pr-2.5 text-kd-12 font-bold" x-text="caseItem.id"></p>
+                      <p id="caseTitle"
+                        class="border-l-2 border-yellow px-2.5 whitespace-pre-line text-kd-12 font-bold"
+                        x-text="caseItem.title"></p>
+                      <a class="block pr-3" :href="caseItem.link" target="_blank"><img class="size-4.25" src="assets\icons\link.svg" :alt="caseItem.title"></a>
+                    </div>
+                    <p class="mt-2.5 uppercase text-kd-10">インテリアデザイン会社：<span x-text="caseItem.company"></span></p>
+                    <p class="mt-3.75 uppercase text-kd-10">インテリアデザイナー：<span x-text="caseItem.designer"></span></p>
+                  </div>
+                  <div class="mt-5">
+                    <img class="w-70 h-auto mx-auto" :src="caseItem.sm_img" :alt="caseItem.title" />
+                  </div>
+                </div>
+              </template>
+            </div>
+            <div class="swiper-pagination !relative !mt-5"></div>
+          </div>
+        </div>
+        <!-- Desktop swiper -->
+        <div class="relative hidden sm:block"
+          x-data="{
+            currentCase: 0,
+            next(){
+              if(this.currentCase + 1 >= $store.sheet.constructionCase.length) {this.currentCase = 0;}
+              else { this.currentCase++; }
+              
+              setTimeout(() => {
+                this.checkTitleHeight();
+              }, 100);
+            },
+            prev(){
+              if(this.currentCase <= 0) {this.currentCase = $store.sheet.constructionCase.length - 1;}
+              else { this.currentCase--; }
+              setTimeout(() => {
+                this.checkTitleHeight();
+              }, 100);
+            },
+            checkTitleHeight() {
+              const nodes = document.querySelectorAll('#caseTitle');
+              nodes.forEach((node) => {
+                const titleHeight = node.clientHeight;
+                if(window.innerWidth >= 640) {
+                  if (titleHeight >= 80){
+                    node.style.fontSize = '0.93375rem';
+                    node.style.lineHeight = '1.4rem';
+                  }
+                } else if (window.innerWidth >= 1440) {
+                  if (titleHeight > 90){
+                    node.style.fontSize = '1.25rem';
+                    node.style.lineHeight = '1.875rem';
+                  }
+                }
+              });
+            }
+          }">
+          <template x-for="(caseItem, idx) in $store.sheet.constructionCase" :key="caseItem.id" >
+            <div class="flex gap-x-8 sm:gap-x-7.5 lg:gap-x-11.25 1.5xl:gap-x-15" x-show="currentCase === idx">
+              <div class="md:min-w-60 1.5xl:w-80">
+                <p class="sm:text-3xl 1.5xl:text-[2.5rem] leading-[1.5] font-bold">施工事例</p>
+                <div class="flex items-center mt-7.5">
+                  <p class="pr-2.5 text-kd-12 sm:text-lg 1.5xl:text-2xl font-bold" x-text="caseItem.id"></p>
+                  <p id="caseTitle"
+                    class="border-l-2 border-yellow px-2.5 whitespace-pre-line text-kd-12 sm:text-lg 1.5xl:text-2x font-bold leading-[1.5]"
+                    x-text="caseItem.title"></p>
+                  <a class="block pr-3" :href="caseItem.link" target="_blank"><img class="md:size-2.75 lg:size-3.75" src="assets\icons\link.svg" :alt="caseItem.title"></a>
+                </div>
+                <p class="whitespace-pre-line mt-7.5 uppercase text-kd-10 sm:text-base lg:text-[15px] 1.5xl:text-xl leading-[1.5]">インテリアデザイン会社
+                  <span x-text="caseItem.company"></span><br/>
+                  インテリアデザイナー
+                  <span x-text="caseItem.designer"></span>
+                </p>
+              </div>
+              <div class="flex-1">
+                <img class="hidden lg:block w-full h-auto" :src="caseItem.md_img" :alt="caseItem.title" />
+                <img class="lg:hidden w-full h-auto" :src="caseItem.sm_img" :alt="caseItem.title" />
+              </div>
+            </div>
+          </template>
+
+          <div class="absolute bottom-0 left-0 flex">
+            <button class="border flex items-center justify-center sm:size-15 1.5xl:size-20" @click="prev()">
+              <img class="rotate-180 sm:size-3.75 xl:size-5" src="assets/icons/arrow.png" />
+            </button>
+            <button class="border flex items-center justify-center sm:size-15 1.5xl:size-20" @click="next()">
+              <img class="sm:size-3.75 xl:size-5" src="assets/icons/arrow.png" />
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section class="max-w-360 mx-auto px-5 sm:px-9.5 lg:px-18.25 xl:px-32.5 py-7.5 sm:py-25">
+        <div class="sm:hidden"
+          x-data
+          x-init="$nextTick(() => {
+            setTimeout(() => {
+              new Swiper('.about-swiper',
+                {
+                  loop: true,
+                  pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                  }
+                }
+              );
+            }, 100);
+          })">
+          <div class="swiper swiper-container about-swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <h3 class="font-bold text-kd-12 uppercase">about keding</h3>
+                <div class="flex gap-x-2.5 mt-5">
+                  <h2 class="font-bold text-kd-sm-40">ケディンとは</h2>
+                  <div class="flex-1 divide-y-2 divide-yellow">
+                    <div class="w-35 h-1/2"></div>
+                    <div class="w-35 h-1/2"></div>
+                  </div>
+                </div>
+                <p class="mt-5 whitespace-pre-line text-kd-10">董事長（代表取締役）
+                  曹 憲章
+                  科定企業（Keding Enterprises）は創業以来、「環境にやさしく、健康に配慮した建材」の開発を中心に、「品質」と「デザイン」の相乗効果を活かしながら、社会のニーズに応える製品を提供し、着実な成長を遂げてまいりました。
+
+                  独自に開発した「KD エコ⁺ラミネート」をはじめとする建築装飾材料事業において、安心・安全・美しさを兼ね備えた空間ソリューションの創出に努め、住宅や商業空間で信頼される「空間デザインメーカー」を目指しています。また、科定は常に革新に挑み、原材料調達、製品設計、製造、包装から販売まで、厳密かつ丁寧な姿勢で品質管理を徹底し、消費者の期待に応える製品とサービスを提供し続けています。
+                </p>
+                <div class="mt-5">
+                  <img src="assets/images/about_1.png" class="w-full max-w-70 h-auto mx-auto" />
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <p class="whitespace-pre-line text-kd-10">現在、科定は、世界各地にマーケティングおよびサービスネットワークを構築し、中国本土、香港、シンガポール、日本、英国などに拠点を展開しております。各地の市場に根ざした事業を推進するとともに、今後もグループの経験と強みを活かし、国際拠点の整備と投資を一層強化してまいります。そして、「台湾から世界へ」という企業ビジョンのもと、さらなるグローバル成長を目指してまいります。
+                  急速に変化する社会環境や深刻化する気候変動、そして健康で豊かな暮らしへの関心の高まりを受け、私たちは「持続可能な経営」の重要性を強く認識しております。社会から信頼され、成長を続ける企業であり続けるために、「共生共栄」の理念のもと、革新を重ね、新たな価値を創造し、具体的な行動を通じて社会に貢献してまいります。
+                  今後とも、皆様の変わらぬご支援とご愛顧を賜りますよう、心よりお願い申し上げます。
+                </p>
+                <div class="mt-5">
+                  <img src="assets/images/about_2.png" class="w-full max-w-70 h-auto mx-auto" />
+                </div>
+              </div>
+            </div>
+            <div class="swiper-pagination !relative !mt-5"></div>
+          </div>
+        </div>
+
+        <div class="hidden sm:block"
+          x-data="{
+            current: 0,
+            next(){
+              if(this.current + 1 >= 2) {this.current = 0;}
+              else { this.current++; }
+            },
+            prev(){
+              if(this.current <= 0) {this.current = 2 - 1;}
+              else { this.current--; }
+            },
+          }">
+          <div x-show="current === 0" class="flex gap-x-17 lg:gap-x-23.5 xl:gap-x-31.25">
+            <div class="w-[51%]">
+              <h3 class="font-bold text-sm lg:text-lg xl:text-2xl uppercase">about keding</h3>
+              <div class="flex gap-x-5 sm:mt-5.5 xl:mt-7.5">
+                <h2 class="font-bold text-[1.375rem] lg:text-3xl xl:text-[2.5rem] word-keep">ケディンとは</h2>
+                <div class="flex-1 divide-y-2 divide-yellow">
+                  <div class="w-1/2 h-1/2"></div>
+                  <div class="w-1/2 h-1/2"></div>
+                </div>
+              </div>
+              <p class="whitespace-pre-line text-xs lg:text-[15px] xl:text-xl sm:mt-5.5 xl:mt-7.5">董事長（代表取締役）
+                曹 憲章
+                科定企業（Keding Enterprises）は創業以来、「環境にやさしく、健康に配慮した建材」の開発を中心に、「品質」と「デザイン」の相乗効果を活かしながら、社会のニーズに応える製品を提供し、着実な成長を遂げてまいりました。
+
+                独自に開発した「KD エコ⁺ラミネート」をはじめとする建築装飾材料事業において、安心・安全・美しさを兼ね備えた空間ソリューションの創出に努め、住宅や商業空間で信頼される「空間デザインメーカー」を目指しています。また、科定は常に革新に挑み、原材料調達、製品設計、製造、包装から販売まで、厳密かつ丁寧な姿勢で品質管理を徹底し、消費者の期待に応える製品とサービスを提供し続けています。
+              </p>
+            </div>
+            <div class="flex-1">
+              <img src="assets/images/about_1.png" class="w-full h-auto" />
+            </div>
+          </div>
+          <div x-show="current === 1" class="flex gap-x-17 lg:gap-x-23.5 xl:gap-x-31.25">
+            <div class="w-[51%]">
+              <p class="whitespace-pre-line text-xs lg:text-[15px] xl:text-xl pt-3.5 lg:pt-4.5 xl:pt-6.25">現在、科定は、世界各地にマーケティングおよびサービスネットワークを構築し、中国本土、香港、シンガポール、日本、英国などに拠点を展開しております。各地の市場に根ざした事業を推進するとともに、今後もグループの経験と強みを活かし、国際拠点の整備と投資を一層強化してまいります。そして、「台湾から世界へ」という企業ビジョンのもと、さらなるグローバル成長を目指してまいります。
+                急速に変化する社会環境や深刻化する気候変動、そして健康で豊かな暮らしへの関心の高まりを受け、私たちは「持続可能な経営」の重要性を強く認識しております。社会から信頼され、成長を続ける企業であり続けるために、「共生共栄」の理念のもと、革新を重ね、新たな価値を創造し、具体的な行動を通じて社会に貢献してまいります。
+                今後とも、皆様の変わらぬご支援とご愛顧を賜りますよう、心よりお願い申し上げます。
+              </p>
+            </div>
+            <div class="flex-1">
+              <img src="assets/images/about_2.png" class="w-full h-auto" />
+            </div>
+          </div>
+          <div class="flex mt-12.5">
+            <button class="border flex items-center justify-center sm:size-15 xl:size-20" @click="prev()">
+              <img class="rotate-180 sm:size-3.75 xl:size-5" src="assets/icons/arrow.png" />
+            </button>
+            <button class="border flex items-center justify-center sm:size-15 xl:size-20" @click="next()">
+              <img class="sm:size-3.75 xl:size-5" src="assets/icons/arrow.png" />
+            </button>
+          </div>
+        </div>
+      </section>
 
       <!-- Partner -->
       <section class="py-7.5 sm:py-25">
         <div class="text-center">
           <h3 class="text-kd-12 text-kd-sm-24 font-bold uppercase">Partner</h3>
           <h2  class="mt-2.5 text-kd-20 text-kd-sm-40 font-bold">パートナー企業</h2>
+        </div>
+      </section>
+
+      <section class="relative max-w-360 w-full mx-auto pt-7.5 pb-10 sm:pb-0">
+        <div class="hidden sm:flex justify-end"><img src="./assets/images/bottom_bg.png" class="w-full sm:w-[90%] h-117 sm:h-auto"/></div>
+        <div class="sm:absolute top-0 left-0 flex flex-col sm:flex-row justify-center items-center gap-x-10 md:gap-x-20 w-full h-full">
+          <img src="./assets/images/bottom_img.png" class="max-w-125 w-46.75 sm:w-[34.7vw] h-auto" />
+          <div class="flex flex-col items-center md:items-start gap-y-2.5 sm:gap-6 md:gap-10 lg:gap-12.5 mt-7.5 sm:mt-0">
+            <img src="./assets/images/logo-transparent.png" class="w-29.25 sm:w-40 md:w-50 lg:w-58.5 h-auto object-cover md:object-contain"/>
+            <a href="https://keding-global.com/ja/media_downloads/kd-eco-laminates/"
+              target="_blank"
+              class="flex justify-center items-center gap-x-6.25 sm:gap-x-5 lg:gap-x-9.5 xl:gap-x-12.5 border bg-white w-43.75 sm:w-49 lg:w-65.5 xl:w-87.5 h-12.5 sm:h-14 lg:h-18.75 xl:h-25">
+              <p class="font-black text-xs sm:text-base lg:text-xl xl:text-2xl text-gray">カタログ<br/>
+                無料ダウンロード</p>
+              <div><img class="size-5 sm:size-5.5 lg:size-7.5 xl:size-10" src="./assets/icons/down-arrow-with-bg.svg" /></div>
+            </a>
+            <a href="https://keding-global.com/ja/about-us/contact-us/" target="_blank" class="flex justify-center items-center gap-x-2.5 sm:gap-x-5 border w-43.75 sm:w-49 lg:w-65.5 xl:w-87.5 h-12.5 sm:h-14 lg:h-18.75 xl:h-25 bg-yellow">
+              <p class="font-black text-[15px] sm:text-lg lg:text-2xl xl:text-3xl text-gray">お問い合わせ</p>
+              <div><img class="size-5 sm:size-5.5 lg:size-7.5 xl:size-10" src="./assets//icons/right-arrow-with-bg.svg" /></div>
+            </a>
+          </div>
         </div>
       </section>
 
@@ -647,12 +933,17 @@
         </p>
       </footer>
     </main>
-  </body>
-  <script>
-    document.addEventListener("alpine:init", () => {
-      Alpine.store("sheet", {
-        rows: [],
-        async fetch() {
+
+    <script>
+      document.addEventListener("alpine:init", () => {
+        Alpine.store("sheet", {
+          rows: [],
+          constructionCase: [],
+          async fetch() {
+            await this.fetchSpeciality();
+            await this.fetchConstructionCase();
+          },
+          async fetchSpeciality() {
           try {
             const sheet_id = "18u5_x4gBvLoH0kQkb-_qM6BaoDQUrhMgQCqJA2T6SKM";
             const gid = "479538022";
@@ -669,7 +960,54 @@
             console.error("Error fetching data:", error);
           }
         },
+          async fetchConstructionCase(){
+            try {
+              const sheet_id = "18u5_x4gBvLoH0kQkb-_qM6BaoDQUrhMgQCqJA2T6SKM";
+              const url = `https://docs.google.com/spreadsheets/d/${sheet_id}/gviz/tq?tqx=out:json&sheet=施工事例`;
+              const res = await fetch(url);
+              const text = await res.text();
+              const json = JSON.parse(
+                text.replace(/^[^\(]*\(/, "").replace(/\);$/, "")
+              );
+              const rows = json.table.rows.map((r) =>
+                r.c.map((c) => (c ? c.v : ""))
+              );
+
+              rows.forEach((row, index) => {
+                if(index === 0) return; // skip header
+                const obj = {
+                  id: row[0],
+                  title: row[1],
+                  link: row[2],
+                  company: row[3],
+                  designer: row[4],
+                  md_img: `assets/images/case_md_0${index}.png`,
+                  sm_img: `assets/images/case_sm_0${index}.png`,
+                }
+
+                this.constructionCase.push(obj);
+              });
+
+              this.initCaseSwiper();
+            } catch (error) {
+              console.error("Error fetching data:", error);
+            }
+          },
+          initCaseSwiper() {
+           setTimeout(() => {
+              const swiper = new Swiper('.case-swiper',
+                {
+                  loop: true,
+                  pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                  }
+                }
+              );
+            }, 500);
+          },
+        });
       });
-    });
-  </script>
-</html>
+    </script>
+  </body>
+ </html>
