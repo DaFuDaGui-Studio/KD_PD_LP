@@ -900,10 +900,49 @@
           <h3 class="text-kd-12 text-kd-sm-24 font-bold uppercase">Partner</h3>
           <h2  class="mt-2.5 text-kd-20 text-kd-sm-40 font-bold">パートナー企業</h2>
         </div>
+        <div class="w-full mt-5 sm:mt-12.5 py-6 sm:py-12.5 overflow-hidden bg-light-gray" 
+          x-data
+          x-init="
+            $nextTick(() => {
+              setTimeout(() => {
+                new Swiper('.partnter-carousel', {
+                  loop: true,
+                  slidesPerView: 'auto',
+                  spaceBetween: 0,
+                  speed: 50000,   
+                  autoplay: {
+                    delay: 0,
+                    disableOnInteraction: false,
+                  },
+                  freeMode: {
+                    enabled: true,
+                    momentum: false,
+                  },
+                  allowTouchMove: false,
+                });
+              }, 100);
+            })"
+        >
+        <div class="style partnter-carousel swiper-container min-w-screen h-12.5 sm:h-25">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide !w-auto">
+              <img src="assets/images/partners.png" class="w-auto h-12.5 sm:h-25 object-cover" />
+            </div>
+            <div class="swiper-slide !w-auto">
+              <img src="assets/images/partners.png" class="w-auto h-12.5 sm:h-25 object-cover" />
+            </div>
+            <div class="swiper-slide !w-auto">
+              <img src="assets/images/partners.png" class="w-auto h-12.5 sm:h-25 object-cover" />
+            </div>
+          </div>
+        </div>
+      </div>
       </section>
 
+      <!-- Bottom -->
       <section class="relative max-w-360 w-full mx-auto pt-7.5 pb-10 sm:pb-0">
-        <div class="hidden sm:flex justify-end"><img src="./assets/images/bottom_bg.png" class="w-full sm:w-[90%] h-117 sm:h-auto"/></div>
+        <div class="hidden sm:flex justify-end"><img src="./assets/images/bottom_bg.png" class="sm:w-[90%] sm:h-auto"/></div>
+        <div class="-z-1 absolute left-[6.25vw] -bottom-15 sm:hidden w-auto"><img src="./assets/images/bottom_bg.png" class="w-217 h-117"/></div>
         <div class="sm:absolute top-0 left-0 flex flex-col sm:flex-row justify-center items-center gap-x-10 md:gap-x-20 w-full h-full">
           <img src="./assets/images/bottom_img.png" class="max-w-125 w-46.75 sm:w-[34.7vw] h-auto" />
           <div class="flex flex-col items-center md:items-start gap-y-2.5 sm:gap-6 md:gap-10 lg:gap-12.5 mt-7.5 sm:mt-0">
@@ -921,6 +960,7 @@
             </a>
           </div>
         </div>
+      
       </section>
 
       <footer
