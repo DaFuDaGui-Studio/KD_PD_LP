@@ -714,7 +714,7 @@
                 および4′×12′（1220×3660×1mm）もご用意
                 しております。</p>
               <div class="w-full md:w-fit">
-                <a href="https://keding-global.com/ja/ji/eko-percent-e2-percent-81-percent-ba-ramineto/" target="_blank" class="flex items-center gap-x-5">
+                <a href="https://keding-global.com/ja/ji/eko-percent-e2-percent-81-percent-ba-ramineto/" target="_blank" class="flex items-center gap-x-5 hover:scale-105 transition duration-100">
                   <p class="font-black md:text-xl xl:text-3xl text-white">仕様一覧</p>
                   <img src="assets/icons/right-arrow-with-yellow-bg.svg" class="size-7.5 xl:size-10" />
                 </a>
@@ -725,7 +725,6 @@
       </section>
 
       <!-- Buttons -->
-
       <section class="text-center py-7.5 sm:py-25">
         <div class="w-fit mx-auto">
           <img src="./assets/images/logo-transparent.png" class="w-29.25 sm:w-58.5 h-auto"/>
@@ -733,14 +732,14 @@
         <div class="flex justify-center gap-x-0 md:gap-x-12.5 mt-5 sm:mt-12.5">
           <a href="https://keding-global.com/ja/media_downloads/kd-eco-laminates/"
             target="_blank"
-            class="flex justify-center items-center gap-x-6.25 sm:gap-x-12.5 border bg-white w-40 sm:w-87.5 h-11.25 sm:h-25">
-            <p class="font-black text-xxs sm:text-2xl text-left text-gray">カタログ<br/>
+            class="group flex justify-center items-center gap-x-6.25 sm:gap-x-12.5 border bg-white w-40 sm:w-87.5 h-11.25 sm:h-25">
+            <p class="font-black text-xxs sm:text-2xl text-left text-gray group-hover:scale-105 transition duration-100">カタログ<br/>
               無料ダウンロード</p>
-            <div><img class="size-4.5 sm:size-10" src="./assets/icons/down-arrow-with-bg.svg" /></div>
+            <div class="group-hover:scale-105 transition duration-100"><img class="size-4.5 sm:size-10" src="./assets/icons/down-arrow-with-bg.svg" /></div>
           </a>
-          <a href="https://keding-global.com/ja/about-us/contact-us/" target="_blank" class="flex justify-center items-center gap-x-2.25 sm:gap-x-5 border w-40 sm:w-87.5 h-11.25 sm:h-25 bg-yellow">
-            <p class="font-black text-sm sm:text-3xl text-gray">お問い合わせ</p>
-            <div><img class="size-4.5 sm:size-10" src="./assets//icons/right-arrow-with-bg.svg" /></div>
+          <a href="https://keding-global.com/ja/about-us/contact-us/" target="_blank" class="group flex justify-center items-center gap-x-2.25 sm:gap-x-5 border w-40 sm:w-87.5 h-11.25 sm:h-25 bg-yellow">
+            <p class="font-black text-sm sm:text-3xl text-gray group-hover:scale-105 transition duration-100">お問い合わせ</p>
+            <div class="group-hover:scale-105 transition duration-100"><img class="size-4.5 sm:size-10" src="./assets//icons/right-arrow-with-bg.svg" /></div>
           </a>
         </div>
       </section>
@@ -828,7 +827,7 @@
                   <span x-text="caseItem.designer"></span>
                 </p>
               </div>
-              <div class="flex-1">
+              <div class="flex-1 hover:scale-105 transition duration-100">
                 <img class="hidden lg:block w-full h-auto" :src="caseItem.md_img" :alt="caseItem.title" />
                 <img class="lg:hidden w-full h-auto" :src="caseItem.sm_img" :alt="caseItem.title" />
               </div>
@@ -836,11 +835,11 @@
           </template>
 
           <div class="absolute bottom-0 left-0 flex">
-            <button class="border flex items-center justify-center sm:size-15 1.5xl:size-20" @click="prev()">
-              <img class="rotate-180 sm:size-3.75 xl:size-5" src="assets/icons/arrow.png" />
+            <button class="group cursor-pointer border flex items-center justify-center sm:size-15 1.5xl:size-20" @click="prev()">
+              <img class="rotate-180 sm:size-3.75 xl:size-5 group-hover:scale-105" src="assets/icons/arrow.png" />
             </button>
-            <button class="border flex items-center justify-center sm:size-15 1.5xl:size-20" @click="next()">
-              <img class="sm:size-3.75 xl:size-5" src="assets/icons/arrow.png" />
+            <button class="group cursor-pointer border flex items-center justify-center sm:size-15 1.5xl:size-20" @click="next()">
+              <img class="sm:size-3.75 xl:size-5 group-hover:scale-105" src="assets/icons/arrow.png" />
             </button>
           </div>
         </div>
@@ -943,11 +942,11 @@
             </div>
           </div>
           <div class="flex mt-12.5">
-            <button class="border flex items-center justify-center sm:size-15 xl:size-20" @click="prev()">
-              <img class="rotate-180 sm:size-3.75 xl:size-5" src="assets/icons/arrow.png" />
+            <button class="group cursor-pointer border flex items-center justify-center sm:size-15 xl:size-20" @click="prev()">
+              <img class="rotate-180 sm:size-3.75 xl:size-5 group-hover:scale-105" src="assets/icons/arrow.png" />
             </button>
-            <button class="border flex items-center justify-center sm:size-15 xl:size-20" @click="next()">
-              <img class="sm:size-3.75 xl:size-5" src="assets/icons/arrow.png" />
+            <button class="group cursor-pointer border flex items-center justify-center sm:size-15 xl:size-20" @click="next()">
+              <img class="sm:size-3.75 xl:size-5 group-hover:scale-105" src="assets/icons/arrow.png" />
             </button>
           </div>
         </div>
@@ -959,43 +958,14 @@
           <h3 class="text-kd-12 text-kd-sm-24 font-bold uppercase">Partner</h3>
           <h2  class="mt-2.5 text-kd-20 text-kd-sm-40 font-bold">パートナー企業</h2>
         </div>
-        <div class="w-full mt-5 sm:mt-12.5 py-6 sm:py-12.5 overflow-hidden bg-light-gray" 
-          x-data
-          x-init="
-            $nextTick(() => {
-              setTimeout(() => {
-                new Swiper('.partnter-carousel', {
-                  loop: true,
-                  slidesPerView: 'auto',
-                  spaceBetween: 0,
-                  speed: 50000,   
-                  autoplay: {
-                    delay: 0,
-                    disableOnInteraction: false,
-                  },
-                  freeMode: {
-                    enabled: true,
-                    momentum: false,
-                  },
-                  allowTouchMove: false,
-                });
-              }, 100);
-            })"
-        >
-        <div class="style partnter-carousel swiper-container min-w-screen h-12.5 sm:h-25">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide !w-auto">
-              <img src="assets/images/partners.png" class="w-auto h-12.5 sm:h-25 object-cover" />
-            </div>
-            <div class="swiper-slide !w-auto">
-              <img src="assets/images/partners.png" class="w-auto h-12.5 sm:h-25 object-cover" />
-            </div>
-            <div class="swiper-slide !w-auto">
-              <img src="assets/images/partners.png" class="w-auto h-12.5 sm:h-25 object-cover" />
-            </div>
+        <div class="relative w-full mt-5 sm:mt-12.5 h-25 sm:h-50 overflow-hidden bg-light-gray">
+          <div id="partner-marquee" class="flex absolute left-0 top-6 sm:top-12.5 h-full w-auto">
+            <img src="assets/images/partners.png" class="min-w-[2525px] sm:min-w-[5049px] h-12.5 sm:h-25 object-contain mr-15" />
+            <img src="assets/images/partners.png" class="min-w-[2525px] sm:min-w-[5049px] h-12.5 sm:h-25 object-contain mr-15" />
+            <img src="assets/images/partners.png" class="min-w-[2525px] sm:min-w-[5049px] h-12.5 sm:h-25 object-contain mr-15" />
+            <!-- 會自動複製一份，JS 會補 -->
           </div>
         </div>
-      </div>
       </section>
 
       <!-- Bottom -->
@@ -1008,14 +978,14 @@
             <img src="./assets/images/logo-transparent.png" class="w-29.25 sm:w-32.75 lg:w-43.75 xl:w-58.5 h-auto object-cover md:object-contain"/>
             <a href="https://keding-global.com/ja/media_downloads/kd-eco-laminates/"
               target="_blank"
-              class="flex justify-center items-center gap-x-6.25 sm:gap-x-5 lg:gap-x-9.5 xl:gap-x-12.5 border bg-white w-43.75 sm:w-49 lg:w-65.5 xl:w-87.5 h-12.5 sm:h-14 lg:h-18.75 xl:h-25">
-              <p class="font-black text-xs sm:text-base lg:text-xl xl:text-2xl text-gray">カタログ<br/>
+              class="group flex justify-center items-center gap-x-6.25 sm:gap-x-5 lg:gap-x-9.5 xl:gap-x-12.5 border bg-white w-43.75 sm:w-49 lg:w-65.5 xl:w-87.5 h-12.5 sm:h-14 lg:h-18.75 xl:h-25">
+              <p class="font-black text-xs sm:text-base lg:text-xl xl:text-2xl text-gray group-hover:scale-105 transition duration-100">カタログ<br/>
                 無料ダウンロード</p>
-              <div><img class="size-5 sm:size-5.5 lg:size-7.5 xl:size-10" src="./assets/icons/down-arrow-with-bg.svg" /></div>
+              <div class="group-hover:scale-105 transition duration-100"><img class="size-5 sm:size-5.5 lg:size-7.5 xl:size-10" src="./assets/icons/down-arrow-with-bg.svg" /></div>
             </a>
-            <a href="https://keding-global.com/ja/about-us/contact-us/" target="_blank" class="flex justify-center items-center gap-x-2.5 sm:gap-x-5 border w-43.75 sm:w-49 lg:w-65.5 xl:w-87.5 h-12.5 sm:h-14 lg:h-18.75 xl:h-25 bg-yellow">
-              <p class="font-black text-[15px] sm:text-lg lg:text-2xl xl:text-3xl text-gray">お問い合わせ</p>
-              <div><img class="size-5 sm:size-5.5 lg:size-7.5 xl:size-10" src="./assets//icons/right-arrow-with-bg.svg" /></div>
+            <a href="https://keding-global.com/ja/about-us/contact-us/" target="_blank" class="group flex justify-center items-center gap-x-2.5 sm:gap-x-5 border w-43.75 sm:w-49 lg:w-65.5 xl:w-87.5 h-12.5 sm:h-14 lg:h-18.75 xl:h-25 bg-yellow">
+              <p class="font-black text-[15px] sm:text-lg lg:text-2xl xl:text-3xl transition duration-100 group-hover:scale-105 text-gray">お問い合わせ</p>
+              <div class="group-hover:scale-105 transition duration-100"><img class="size-5 sm:size-5.5 lg:size-7.5 xl:size-10" src="./assets//icons/right-arrow-with-bg.svg" /></div>
             </a>
           </div>
         </div>
@@ -1106,6 +1076,28 @@
             }, 500);
           },
         });
+      });
+    </script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const marquee = document.getElementById('partner-marquee');
+        // 複製內容以實現無縫滾動
+        marquee.innerHTML += marquee.innerHTML;
+
+        let pos = 0;
+        const speed = 1.5; // px/每幀，數字越大越快
+
+        function animate() {
+          pos -= speed;
+          // 當滾動到一半時重設
+          if (Math.abs(pos) >= marquee.scrollWidth / 2) {
+            pos = 0;
+          }
+          marquee.style.transform = `translateX(${pos}px)`;
+          requestAnimationFrame(animate);
+        }
+        animate();
       });
     </script>
   </body>
